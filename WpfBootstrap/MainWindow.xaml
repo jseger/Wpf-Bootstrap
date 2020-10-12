@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBootstrap"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        d:DataContext="{d:DesignInstance local:MainWindow, IsDesignTimeCreatable=True}"
+        Title="WPF Bootstrap" Height="1440" Width="2560">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Buttons" Grid.Row="0" Style="{StaticResource DefaultGroupBox}" Margin="5">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Style="{StaticResource PrimaryButton}" Margin="4,0">Primary</Button>
+                        <Button Style="{StaticResource SecondaryButton}" Margin="4,0">Secondary</Button>
+                        <Button Style="{StaticResource SuccessButton}" Margin="4,0">Success</Button>
+                        <Button Style="{StaticResource InfoButton}" Margin="4,0">Info</Button>
+                        <Button Style="{StaticResource WarningButton}" Margin="4,0">Warning</Button>
+                        <Button Style="{StaticResource DangerButton}" Margin="4,0">Danger</Button>
+                        <Button Style="{StaticResource LinkButton}" Margin="4,0">Link</Button>
+                    </WrapPanel>
+                    <WrapPanel Margin="0,4">
+                        <Button Style="{StaticResource PrimaryButton}" Margin="4,0" IsEnabled="False">Primary</Button>
+                        <Button Style="{StaticResource SecondaryButton}" Margin="4,0" IsEnabled="False">Secondary</Button>
+                        <Button Style="{StaticResource SuccessButton}" Margin="4,0" IsEnabled="False">Success</Button>
+                        <Button Style="{StaticResource InfoButton}" Margin="4,0" IsEnabled="False">Info</Button>
+                        <Button Style="{StaticResource WarningButton}" Margin="4,0" IsEnabled="False">Warning</Button>
+                        <Button Style="{StaticResource DangerButton}" Margin="4,0" IsEnabled="False">Danger</Button>
+                        <Button Style="{StaticResource LinkButton}" Margin="4,0" IsEnabled="False">Link</Button>
+                    </WrapPanel>
+                    <WrapPanel Margin="0,4">
+                        <Button Style="{StaticResource PrimaryButtonLeft}" Margin="4,0,0,0">Button Left</Button>
+                        <Button Style="{StaticResource PrimaryButtonMiddle}">Button Middle</Button>
+                        <Button Style="{StaticResource PrimaryButtonRight}">Button Middle</Button>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Tables" Grid.Row="1" Style="{StaticResource DefaultGroupBox}" Margin="4">
+                <DataGrid ItemsSource="{Binding DataItems}"></DataGrid>
+            </GroupBox>
+            <GroupBox Header="Inputs" Grid.Row="2" Style="{StaticResource DefaultGroupBox}" Margin="4">
+                <StackPanel>
+                    <Label>Text</Label>
+                    <TextBox Text="Enter your name"></TextBox>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+    </ScrollViewer>
 </Window>

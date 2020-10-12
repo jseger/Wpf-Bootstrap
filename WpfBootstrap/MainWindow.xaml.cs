@@ -23,6 +23,31 @@ namespace WpfBootstrap
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = this;
+        }
+
+        public List<object> DataItems
+        {
+            get {
+                return new List<object>() {
+                    new {
+                        Name = "Joe",
+                        Age = 65,
+                        Phone = "906-356-6880"
+                    },
+                    new {
+                        Name = "Jim",
+                        Age = 32,
+                        Phone = "906-356-6946"
+                    },
+                    new {
+                        Name = "Jane",
+                        Age = 27,
+                        Phone = "906-356-6990"
+                    }
+                };
+            }
         }
     }
 }
